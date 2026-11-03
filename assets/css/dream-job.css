@@ -1,0 +1,524 @@
+
+/* ========================================
+   DREAM JOB PAGE
+======================================== */
+
+.dream-hero {
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px 80px;
+}
+
+.dream-hero-content {
+    max-width: 650px;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.dream-hero h1 {
+    font-size: clamp(2.7rem, 5vw, 4.5rem);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.gradient-text {
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--accent-color)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.dream-hero-content > p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 550px;
+    margin-bottom: 32px;
+}
+
+.dream-career-gallery {
+    width: 100%;
+    max-width: 520px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    justify-self: center;
+}
+
+.dream-career-card {
+    min-width: 0;
+    aspect-ratio: 0.76;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(139, 131, 255, 0.3);
+    background: var(--surface-color);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    isolation: isolate;
+    transition: transform 0.35s ease, border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.dream-career-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 26px 65px rgba(0, 0, 0, 0.4);
+}
+
+.dream-career-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.dream-career-card:hover img {
+    transform: scale(1.06);
+}
+
+.dream-career-card figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 54px 16px 18px;
+    background: linear-gradient(transparent, rgba(8, 11, 22, 0.92));
+    color: var(--text-color);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.dream-career-card figcaption small {
+    color: rgba(245, 246, 255, 0.8);
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ========================================
+   GENERAL DREAM SECTIONS
+======================================== */
+
+.dream-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 40px;
+}
+
+.dream-section:nth-of-type(even) {
+    background: rgba(17, 22, 41, 0.35);
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 15px;
+}
+
+.section-heading > p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* ========================================
+   CAREER DESCRIPTION
+======================================== */
+
+.career-description {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 45px;
+    border-radius: 20px;
+    background: var(--surface-color);
+    border: 1px solid rgba(139, 131, 255, 0.15);
+}
+
+.career-text h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.career-text p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.career-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   REASONS CARDS
+======================================== */
+
+.reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.reason-card {
+    padding: 35px 28px;
+    border-radius: 18px;
+    background: var(--surface-color);
+    border: 1px solid rgba(139, 131, 255, 0.15);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.reason-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+}
+
+.reason-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: rgba(108, 99, 255, 0.15);
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.reason-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.reason-card p {
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* ========================================
+   CAREER SKILLS
+======================================== */
+
+.career-skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.career-skill {
+    padding: 28px;
+    border-radius: 16px;
+    background: var(--surface-color);
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.career-skill:hover {
+    transform: translateX(7px);
+}
+
+.career-skill h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.career-skill p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* ========================================
+   FUTURE GOALS TIMELINE
+======================================== */
+
+.goal-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.goal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 25px;
+    border-radius: 16px;
+    background: var(--surface-color);
+    border: 1px solid rgba(139, 131, 255, 0.12);
+}
+
+.goal-number {
+    min-width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--accent-color)
+    );
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.goal-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.goal-item p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* ========================================
+   CLOSING MESSAGE
+======================================== */
+
+.dream-quote {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 70px 40px;
+    text-align: center;
+    border-radius: 25px;
+    background: linear-gradient(
+        135deg,
+        rgba(108, 99, 255, 0.16),
+        rgba(0, 212, 255, 0.08)
+    );
+    border: 1px solid rgba(139, 131, 255, 0.2);
+}
+
+.dream-quote h2 {
+    max-width: 750px;
+    margin: 0 auto 20px;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.4;
+}
+
+.dream-quote > p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* ========================================
+   BACK TO HOMEPAGE
+======================================== */
+
+.dream-back-home {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 40px 100px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.dream-back-content {
+    padding: 60px 30px;
+    border-radius: 22px;
+    background: var(--surface-color);
+    border: 1px solid rgba(139, 131, 255, 0.3);
+}
+
+.dream-back-content h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.dream-back-content p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* Homepage Button */
+
+.dream-home-button,
+.dream-home-button:link,
+.dream-home-button:visited {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 52px;
+    padding: 15px 32px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--accent-color)
+    );
+
+    color: #ffffff !important;
+    text-decoration: none !important;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    border: 0;
+    border-radius: 50px;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    position: relative;
+    z-index: 20;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.dream-home-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(108, 99, 255, 0.35);
+}
+
+.back-arrow {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 900px) {
+    .dream-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 45px;
+        padding-top: 80px;
+    }
+
+    .dream-hero-content {
+        margin: 0 auto;
+    }
+
+    .dream-hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dream-career-gallery {
+        max-width: 500px;
+    }
+
+    .reason-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .dream-hero {
+        padding: 65px 20px;
+        min-height: auto;
+    }
+
+    .dream-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .dream-career-gallery {
+        gap: 12px;
+    }
+
+    .dream-career-card {
+        border-radius: 16px;
+    }
+
+    .dream-career-card figcaption {
+        padding: 42px 10px 12px;
+        font-size: 1rem;
+    }
+
+    .dream-career-card figcaption small {
+        font-size: 0.65rem;
+    }
+
+    .dream-section {
+        padding: 65px 20px;
+    }
+
+    .career-description {
+        padding: 28px 22px;
+    }
+
+    .reason-grid,
+    .career-skills {
+        grid-template-columns: 1fr;
+    }
+
+    .reason-card {
+        padding: 28px 22px;
+    }
+
+    .goal-item {
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .goal-number {
+        min-width: 45px;
+        height: 45px;
+        font-size: 0.95rem;
+    }
+
+    .dream-quote {
+        margin: 50px 20px;
+        padding: 50px 22px;
+    }
+
+    .dream-back-home {
+        padding: 20px 20px 70px;
+    }
+
+    .dream-back-content {
+        padding: 45px 22px;
+    }
+
+    .dream-home-button {
+        width: 100%;
+        max-width: 280px;
+    }
+}

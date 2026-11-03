@@ -1,0 +1,411 @@
+
+/* =========================================
+   1. GOOGLE FONTS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================
+   2. ROOT VARIABLES
+========================================= */
+
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #8b83ff;
+    --accent-color: #00d4ff;
+
+    --background-color: #080b16;
+    --surface-color: #111629;
+    --surface-light: #191f36;
+
+    --text-color: #f5f6ff;
+    --text-muted: #a4abc2;
+
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --transition: all 0.3s ease;
+
+    --container-width: 1200px;
+}
+
+
+/* =========================================
+   3. GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-body);
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+body,
+button,
+input,
+textarea {
+    font-family: var(--font-body);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+
+/* =========================================
+   4. PARTICLE BACKGROUND
+========================================= */
+
+#particles-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Keep website content above particles */
+
+.header,
+main,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   5. CONTAINER AND SECTIONS
+========================================= */
+
+.section {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 100px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading p {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+}
+
+
+/* =========================================
+   6. NAVIGATION BAR
+========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(8, 11, 22, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: var(--container-width);
+    min-height: 75px;
+    padding: 0 30px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-color);
+    letter-spacing: -1px;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.8rem;
+}
+
+
+/* =========================================
+   7. BUTTONS
+========================================= */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 13px 28px;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3);
+}
+
+
+/* =========================================
+   8. SHARED CARDS
+========================================= */
+
+.education-card,
+.skills-card,
+.gallery-card {
+    background: rgba(17, 22, 41, 0.85);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    transition: var(--transition);
+}
+
+.education-card:hover,
+.skills-card:hover,
+.gallery-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-color);
+}
+
+
+/* =========================================
+   9. FOOTER
+========================================= */
+
+.footer {
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    background: rgba(8, 11, 22, 0.9);
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   10. TEXT SELECTION
+========================================= */
+
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+
+/* =========================================
+   11. SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+
+/* =========================================
+   12. SCROLL REVEAL ANIMATIONS
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+}
+
+
+/* =========================================
+   13. SMOOTH CARD HOVER EFFECTS
+========================================= */
+
+.education-card,
+.skills-card,
+.reason-card,
+.gallery-item,
+.dream-skill-card {
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================
+   14. IMAGE ERROR HANDLING
+========================================= */
+
+img.image-error {
+    opacity: 0.35;
+    background: var(--surface-light);
+    object-fit: contain;
+}
+
+
+/* =========================================
+   15. PAGE FADE-IN ANIMATION
+========================================= */
+
+body {
+    opacity: 1;
+}
+
+body.page-loaded {
+    animation: pageFadeIn 0.7s ease both;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   16. ACCESSIBILITY - KEYBOARD FOCUS
+========================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   17. REDUCED MOTION SUPPORT
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
