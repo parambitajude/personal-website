@@ -352,6 +352,27 @@ I'm always looking forward to learning, improving myself, and creating new exper
     <script src="assets/js/animations.js" defer></script>
     <script src="assets/js/particles.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/background-music.js" defer></script>
+
+    <aside class="music-player" aria-label="Background music player">
+        <audio
+            id="background-music"
+            src="assets/audio/pogisong.mp3"
+            loop
+            preload="none"
+        ></audio>
+        <button
+            class="music-toggle"
+            id="music-toggle"
+            type="button"
+            aria-label="Play background music"
+            aria-pressed="false"
+        >
+            <span class="music-toggle-icon" aria-hidden="true">&#9835;</span>
+            <span class="music-toggle-label">Play music</span>
+        </button>
+        <p class="music-status" id="music-status" aria-live="polite" hidden></p>
+    </aside>
 
 </body>
 </html>
