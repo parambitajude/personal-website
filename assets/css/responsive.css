@@ -1,264 +1,716 @@
+/* Mobile-first layouts shared by every page. */
 
-/* =========================================
-   1. TABLET RESPONSIVENESS
-   Screens up to 1024px
-========================================= */
+:root {
+    --container-width: 100%;
+}
 
-@media screen and (max-width: 1024px) {
+html {
+    scroll-padding-top: 70px;
+}
 
-    :root {
-        --container-width: 900px;
-    }
+.section {
+    width: 100%;
+    max-width: 1280px;
+    padding: 64px 18px;
+}
 
+.navbar {
+    width: 100%;
+    min-height: 70px;
+    padding: 0 18px;
+}
+
+.menu-toggle {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+}
+
+.nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    max-height: calc(100vh - 70px);
+    padding: 12px 18px 20px;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    background: rgba(8, 11, 22, 0.98);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px 12px;
+    font-size: 1rem;
+}
+
+.hero {
+    min-height: 0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    flex-direction: column-reverse;
+    gap: 32px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 100%;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.35rem, 10vw, 3.5rem);
+    overflow-wrap: anywhere;
+}
+
+.hero-content h2 {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+}
+
+.hero-description {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 0.95rem;
+}
+
+.hero-image {
+    width: clamp(170px, 58vw, 235px);
+    height: auto;
+    aspect-ratio: 1;
+    flex: none;
+}
+
+.about-content {
+    padding: 38px 22px;
+}
+
+.about-content p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.education-content,
+.gallery-preview-content,
+.skills-content,
+.reason-grid,
+.career-skills,
+.gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.education-content,
+.skills-content,
+.reason-grid,
+.career-skills,
+.gallery-grid {
+    gap: 16px;
+}
+
+.education-card,
+.skills-card,
+.reason-card,
+.career-skill {
+    min-width: 0;
+}
+
+.skills-card {
+    min-height: 0;
+    padding: 24px;
+}
+
+.skills-card-top {
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.skills-card-label {
+    font-size: 0.65rem;
+}
+
+.skills-development-note {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+}
+
+.gallery-preview-content {
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.gallery-preview-content img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+}
+
+.dream-job-content {
+    padding: 36px 22px;
+}
+
+.dream-job-content p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.contact-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 20px;
+}
+
+.contact-form {
+    min-width: 0;
+    padding: 22px 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    min-width: 0;
+    font-size: 16px;
+}
+
+.contact-item {
+    gap: 10px;
+    padding: 12px;
+}
+
+.dream-hero {
+    width: 100%;
+    min-height: 0;
+    max-width: 1280px;
+    padding: 68px 18px 54px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+}
+
+.dream-hero h1 {
+    font-size: clamp(2.35rem, 10vw, 3.5rem);
+    overflow-wrap: anywhere;
+}
+
+.dream-hero-content > p {
+    font-size: 1rem;
+}
+
+.dream-career-gallery {
+    width: 100%;
+    max-width: 480px;
+    gap: 12px;
+}
+
+.dream-career-card {
+    border-radius: 16px;
+}
+
+.dream-career-card figcaption {
+    padding: 42px 12px 14px;
+    font-size: 1rem;
+}
+
+.dream-career-card figcaption small {
+    font-size: 0.68rem;
+}
+
+.dream-section {
+    width: 100%;
+    max-width: 1280px;
+    padding: 64px 18px;
+}
+
+.career-description {
+    padding: 28px 20px;
+}
+
+.career-text h3 {
+    font-size: 1.4rem;
+}
+
+.career-text p {
+    font-size: 0.96rem;
+    line-height: 1.8;
+}
+
+.reason-card,
+.career-skill {
+    padding: 24px 20px;
+}
+
+.goal-item {
+    min-width: 0;
+    gap: 14px;
+    padding: 18px;
+}
+
+.goal-number {
+    min-width: 44px;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    font-size: 0.95rem;
+}
+
+.dream-quote {
+    width: calc(100% - 36px);
+    margin: 48px auto;
+    padding: 42px 20px;
+}
+
+.dream-back-home {
+    width: 100%;
+    max-width: 1280px;
+    padding: 20px 18px 64px;
+}
+
+.dream-back-content {
+    padding: 42px 20px;
+}
+
+.dream-home-button {
+    width: 100%;
+    max-width: 300px;
+}
+
+.gallery-hero {
+    min-height: 0;
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+.gallery-subtitle,
+.section-label {
+    letter-spacing: 1.5px;
+    overflow-wrap: anywhere;
+}
+
+.gallery-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+    overflow-wrap: anywhere;
+}
+
+.gallery-description {
+    font-size: 0.98rem;
+}
+
+.gallery-categories {
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.category-btn {
+    min-height: 42px;
+    padding: 9px 14px;
+    font-size: 0.82rem;
+}
+
+.gallery-grid {
+    gap: 16px;
+}
+
+.gallery-image-wrapper {
+    height: auto;
+    aspect-ratio: 4 / 3;
+}
+
+.gallery-overlay {
+    padding: 18px;
+    opacity: 1;
+}
+
+.gallery-overlay h3,
+.gallery-overlay p {
+    transform: translateY(0);
+}
+
+.gallery-view-btn {
+    opacity: 1;
+}
+
+.lightbox {
+    padding: 56px 52px;
+}
+
+.lightbox-content {
+    min-width: 0;
+}
+
+.lightbox-content img {
+    max-height: 65vh;
+}
+
+.lightbox-caption h3 {
+    font-size: 1.2rem;
+}
+
+.lightbox-close {
+    top: 12px;
+    right: 12px;
+}
+
+.lightbox-prev {
+    left: 6px;
+}
+
+.lightbox-next {
+    right: 6px;
+}
+
+.footer {
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.footer p {
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 640px) {
     .section {
-        padding: 80px 25px;
+        padding: 76px 24px;
     }
 
-    /* Hero Section */
+    .navbar {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
 
     .hero {
-        gap: 40px;
+        padding-top: 82px;
+        padding-bottom: 82px;
     }
 
     .hero-image {
-        flex: 0 0 290px;
-        width: 290px;
-        height: 290px;
+        width: 250px;
     }
 
-    .hero-content h1 {
-        font-size: clamp(2.8rem, 6vw, 4.5rem);
-    }
-
-    /* Navigation */
-
-    .nav-links {
+    .gallery-preview-content {
         gap: 18px;
     }
 
-    .nav-links a {
-        font-size: 0.85rem;
+    .gallery-categories {
+        gap: 10px;
     }
 
-}
-
-
-/* =========================================
-   2. MOBILE NAVIGATION
-   Screens up to 768px
-========================================= */
-
-@media screen and (max-width: 768px) {
-
-    /* Navigation Bar */
-
-    .navbar {
-        min-height: 70px;
-        padding: 0 20px;
+    .category-btn {
+        padding-right: 18px;
+        padding-left: 18px;
     }
 
-    .menu-toggle {
-        display: block;
+    .dream-section {
+        padding: 76px 24px;
     }
 
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-
-        width: 100%;
-        padding: 20px;
-
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-
-        background: rgba(8, 11, 22, 0.98);
-        border-bottom: 1px solid var(--border-color);
+    .dream-hero {
+        padding-right: 24px;
+        padding-left: 24px;
     }
 
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        font-size: 1rem;
-    }
-
-
-    /* Hero Section */
-
-    .hero {
-        min-height: auto;
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 40px;
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-image {
-        flex: none;
-        width: 250px;
-        height: 250px;
-    }
-
-
-    /* About Section */
-
-    .about-content {
-        padding: 50px 42px;
-    }
-
-
-    /* Education Section */
-
-    .education-content {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* Gallery Preview */
-
-    .gallery-preview-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    /* Skills Section */
-
-    .skills-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    /* Contact Section */
-
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 28px;
-    }
-
-}
-
-
-/* =========================================
-   3. SMALL MOBILE DEVICES
-   Screens up to 480px
-========================================= */
-
-@media screen and (max-width: 480px) {
-
-    .section {
-        padding: 65px 18px;
-    }
-
-    .section-heading {
-        margin-bottom: 35px;
-    }
-
-    .section-heading h2 {
-        font-size: 2rem;
-    }
-
-    /* Hero Section */
-
-    .hero-image {
-        width: 210px;
-        height: 210px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.7rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.2rem;
-    }
-
-    .hero-description {
-        font-size: 0.9rem;
-    }
-
-
-    /* About Section */
-
-    .about-content {
-        padding: 46px 32px;
-    }
-
-    .about-content p {
-        font-size: 0.95rem;
-    }
-
-
-    /* Gallery Preview */
-
-    .gallery-preview-content {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-preview-content img {
-        height: 230px;
-    }
-
-
-    /* Skills Section */
-
-    .skills-content {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* Dream Job Section */
-
-    .dream-job-content {
-        padding: 35px 20px;
-    }
-
-
-    /* Contact Section */
-
-    .contact-content {
-        padding: 20px;
+    .dream-back-home {
+        padding-right: 24px;
+        padding-left: 24px;
     }
 
     .contact-form {
-        padding: 22px 18px;
+        padding: 28px;
     }
-
-    .contact-item {
-        min-height: 74px;
-        padding: 14px;
-    }
-
-
-    /* Footer */
-
-    .footer p {
-        font-size: 0.75rem;
-    }
-
 }
 
+@media (min-width: 768px) {
+    .section {
+        padding: 84px 30px;
+    }
 
-/* =========================================
-   4. ACCESSIBILITY
-========================================= */
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        position: static;
+        display: flex;
+        max-height: none;
+        padding: 0;
+        overflow: visible;
+        flex-direction: row;
+        align-items: center;
+        gap: clamp(12px, 2vw, 22px);
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .nav-links a {
+        padding: 8px 0;
+        font-size: clamp(0.78rem, 1.5vw, 0.9rem);
+    }
+
+    .hero {
+        min-height: 540px;
+        padding-top: 86px;
+        padding-bottom: 86px;
+        flex-direction: row;
+        text-align: left;
+        gap: 30px;
+    }
+
+    .hero-content {
+        flex: 1;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 5.2vw, 4rem);
+    }
+
+    .hero-image {
+        width: clamp(220px, 31vw, 290px);
+        flex: 0 0 clamp(220px, 31vw, 290px);
+    }
+
+    .hero-description {
+        margin-left: 0;
+    }
+
+    .about-content {
+        padding: 46px 38px;
+    }
+
+    .education-content,
+    .gallery-preview-content,
+    .skills-content,
+    .career-skills,
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .reason-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-preview-content img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .contact-content {
+        padding: 28px;
+    }
+
+    .dream-hero {
+        padding: 82px 30px 64px;
+    }
+
+    .dream-section {
+        padding: 84px 30px;
+    }
+
+    .career-description {
+        padding: 36px;
+    }
+
+    .reason-card,
+    .career-skill {
+        padding: 28px 24px;
+    }
+
+    .dream-quote {
+        width: calc(100% - 60px);
+        padding: 56px 34px;
+    }
+
+    .dream-back-home {
+        padding: 24px 30px 80px;
+    }
+
+    .gallery-hero {
+        padding-top: 82px;
+        padding-bottom: 60px;
+    }
+
+    .gallery-grid {
+        gap: 20px;
+    }
+
+    .gallery-overlay {
+        padding: 22px;
+    }
+
+    .lightbox {
+        padding: 50px 70px;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --container-width: 1280px;
+    }
+
+    .section {
+        padding: 100px 32px;
+    }
+
+    .navbar {
+        max-width: 1280px;
+        min-height: 75px;
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+
+    .nav-links {
+        gap: clamp(12px, 1.5vw, 22px);
+    }
+
+    .nav-links a {
+        font-size: clamp(0.78rem, 0.9vw, 0.9rem);
+    }
+
+    .hero {
+        min-height: 620px;
+        gap: 48px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(3rem, 5.5vw, 5rem);
+    }
+
+    .hero-image {
+        width: 320px;
+        height: 320px;
+        flex-basis: 320px;
+    }
+
+    .education-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .gallery-preview-content,
+    .skills-content,
+    .reason-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .gallery-preview-content {
+        gap: 20px;
+    }
+
+    .gallery-preview-content img {
+        height: 250px;
+        aspect-ratio: auto;
+    }
+
+    .contact-content {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 32px;
+        padding: 32px;
+    }
+
+    .contact-form {
+        padding: 28px;
+    }
+
+    .dream-hero {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 40px;
+        padding: 90px 32px 70px;
+    }
+
+    .dream-career-gallery {
+        max-width: 500px;
+        gap: 16px;
+    }
+
+    .dream-section {
+        padding: 92px 32px;
+    }
+
+    .career-skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dream-quote {
+        width: calc(100% - 64px);
+        max-width: 1000px;
+    }
+
+    .dream-back-home {
+        padding: 30px 32px 100px;
+    }
+
+    .gallery-hero {
+        min-height: 380px;
+        padding-top: 100px;
+        padding-bottom: 70px;
+    }
+
+    .gallery-grid {
+        gap: 25px;
+    }
+
+    .gallery-image-wrapper {
+        height: 320px;
+        aspect-ratio: auto;
+    }
+
+    .gallery-overlay {
+        opacity: 0;
+    }
+
+    .gallery-item:hover .gallery-overlay,
+    .gallery-item:focus-within .gallery-overlay {
+        opacity: 1;
+    }
+
+    .gallery-view-btn {
+        opacity: 0;
+    }
+
+    .gallery-item:hover .gallery-view-btn,
+    .gallery-item:focus-within .gallery-view-btn {
+        opacity: 1;
+    }
+
+    .lightbox {
+        padding: 40px 80px;
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+        --container-width: 1280px;
+    }
+
+    .section,
+    .dream-hero,
+    .dream-section,
+    .dream-back-home,
+    .navbar {
+        max-width: 1280px;
+    }
+}
+
+@media (hover: none) {
+    .gallery-overlay,
+    .gallery-view-btn {
+        opacity: 1;
+    }
+
+    .gallery-overlay h3,
+    .gallery-overlay p {
+        transform: translateY(0);
+    }
+}
 
 @media (prefers-reduced-motion: reduce) {
-
     html {
         scroll-behavior: auto;
     }
@@ -270,5 +722,4 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-
 }

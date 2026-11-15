@@ -8,8 +8,8 @@
     <title>My Dream Job | Personal Website</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/dream-job.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 
 <body>
@@ -329,6 +329,27 @@
     <script src="../assets/js/particles.js"></script>
     <script src="../assets/js/dream-job.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/background-music.js"></script>
+
+    <aside class="music-player" aria-label="Background music player">
+        <audio
+            id="background-music"
+            src="../assets/audio/pogisong.mp3"
+            loop
+            preload="none"
+        ></audio>
+        <button
+            class="music-toggle"
+            id="music-toggle"
+            type="button"
+            aria-label="Play background music"
+            aria-pressed="false"
+        >
+            <span class="music-toggle-icon" aria-hidden="true">&#9835;</span>
+            <span class="music-toggle-label">Play music</span>
+        </button>
+        <p class="music-status" id="music-status" aria-live="polite" hidden></p>
+    </aside>
 
 </body>
 </html>
